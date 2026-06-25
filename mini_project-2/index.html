@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://www.w3schools.com/w3css/tryw3css_templates_webpage.htm -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>ORA1</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./lib/w3.css">
+  <link rel="stylesheet" href="./lib/w3-theme-black.css">
+  <link rel="stylesheet" href="./lib/css">
+  <link rel="stylesheet" href="./lib/font-awesome.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css">
+  <style>
+    /* CSS for Grid Layout (Request 3) */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 15fx
+    }
+
+    .grid-preview-box {
+      border: 2px solid #ccc;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar w3-theme w3-large">
+      <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1"
+        href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+      <a href="#" onclick="showContent('courseInfo')" class="w3-bar-item w3-button">
+        <i class="fas fa-home"></i>
+      </a>
+      <a href="javascript:void(0)" onclick="showContent('info')" class="w3-bar-item w3-button">Course Information</a>
+      <a href="javascript:void(0)" onclick="showContent('web-tech')" class="w3-bar-item w3-button">Web Technologies</a>
+      <a href="javascript:void(0)" onclick="showContent('student-info')" class="w3-bar-item w3-button">Student
+        Information</a>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()"
+      class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+      <i class="fa fa-remove"></i>
+    </a>
+    <h4 class="w3-bar-item"><b>Menu</b></h4>
+    <a class="w3-bar-item w3-button w3-hover-black"
+      href="https://www.w3schools.com/w3css/tryw3css_templates_webpage.htm#">More Information</a>
+    <a class="w3-bar-item w3-button w3-hover-black"
+      href="https://www.w3schools.com/w3css/tryw3css_templates_webpage.htm#">More Information</a>
+    <a class="w3-bar-item w3-button w3-hover-black"
+      href="https://www.w3schools.com/w3css/tryw3css_templates_webpage.htm#">More Information</a>
+    <a class="w3-bar-item w3-button w3-hover-black"
+      href="https://www.w3schools.com/w3css/tryw3css_templates_webpage.htm#">More Information</a>
+  </nav>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+    id="myOverlay"></div>
+
+  <!-- Main content -->
+  <div id="content-container" class="w3-main" style="margin-left:250px">
+    <!-- Section 1: Logo -->
+    <div id="homepage" class="w3-container w3-padding-64 hidden">
+      <div class="container">
+        <div id="classInfo">
+          <div class="section-header">Class Information</div>
+          <table class="table-info">
+            <tr>
+              <th>Day</th>
+              <td>Friday</td>
+            </tr>
+            <tr>
+              <th>Time/Session</th>
+              <td>From 3 to 6</td>
+            </tr>
+            <tr>
+              <th>Date/Week</th>
+              <td>2-9,11-18</td>
+            </tr>
+            <tr>
+              <th>Location</th>
+              <td>D9-501</td>
+            </tr>
+          </table>
+        </div>
+        <div id="seminar">
+          <div class="section-header" style="margin-top: 20px;">Seminar Information</div>
+          <table class="table-info">
+            <tr>
+              <th>Class Code</th>
+              <td>151900</td>
+            </tr>
+            <tr>
+              <th>Type</th>
+              <td>LT+BT</td>
+            </tr>
+            <tr>
+              <th>System</th>
+              <td>HEDSPI</td>
+            </tr>
+            <tr>
+              <th>Lecturer</th>
+              <td>Hoang Huy Pham</td>
+            </tr>
+            <tr>
+              <th>Number of Absences</th>
+              <td>0</td>
+            </tr>
+            <tr>
+              <th>Number of Students</th>
+              <td>150</td>
+            </tr>
+            <tr>
+              <th>Training Form</th>
+              <td>Offline</td>
+            </tr>
+          </table>
+        </div>
+        <div id="company">
+          <div class="section-header" style="margin-top: 20px;">Company Information</div>
+          <div style="display: flex; justify-content: space-between;">
+            <!-- Left side content -->
+            <div style="flex: 2; margin-right: 30px;">
+              <ul>
+                <li><strong>Company:</strong> FPT Software</li>
+              </ul>
+              <p>
+                FPT Software is another name for FPT Software LLC with the main task of software outsourcing in
+                Vietnam and abroad. Established in 1988, FPT Software has 3 main headquarters in Vietnam and
+                and some countries around the world such as the United States, Japan, Malaysia, Germany, Australia,
+                Singapore, Malaysia, Thailand and
+                Philippines. Currently, FPT Software meets the large software outsourcing needs for more than 150
+                leading companies in 20
+                the world's largest countries with large contracts, sometimes reaching up to 1 million USD for some
+                partners such as Hitachi, NEOPOST, Petronas, Deutsche Bank, and Unilever with more than 4000 employees
+                worldwide.
+              </p>
+
+
+
+              <p>FPT Software pursues the goal of software outsourcing to meet the IT development needs of domestic
+                software companies, large domestic companies and, more ambitiously, to export software worldwide for
+                foreign companies to know FPT Group, the main purpose is to reach new heights through technology
+                to improve labor productivity.</p>
+
+
+
+              <p>FPT Software's business stems from Information Technology and Telecommunications FPT is the core to
+                meet
+                the
+                customers in 63 provinces and territories in Vietnam and expand to global customers. Since its
+                establishment,
+                FPT Software has been the number 1 software company in Vietnam in the field of system integration,
+                distribution and retail, IT services, software outsourcing, retail of IT products.
+                IT. In the field of Telecommunications, FPT is one of the top 3 providers of FPT fiber optic internet
+                services in
+                Vietnam. In the field of advertising, FPT is the number 1 online advertising unit in Vietnam with the
+                electronic
+                newspaper VNexpress with over 42 million visits per day.</p>
+
+            </div>
+
+            <!-- Advertisement on the right -->
+            <a href="https://fptsoftware.com/" target="_blank" style="flex: 1; margin-top: 20px;">
+              <div class="FRB" style="width: 100%;">
+                <img class="DRB"
+                  src="https://fptsoftware.com/-/media/project/fpt-software/fso/uplift/about-us/our-people/award.png"
+                  style="width: 100%;">
+                <div class="ERB" style="width: 100%;color: blue" title="">FPT SOFTWARE RECRUITMENT</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Section 2: Course Information -->
+    <div id="info" class="w3-container w3-padding-64 hidden">
+      <div class="container">
+        <div class="header">Course Information</div>
+        <div style="width: 100%;">
+          <table cellspacing="0" cellpadding="0" style="width: 100%;">
+            <tbody>
+              <tr>
+                <td style="vertical-align: top;">
+                  <div class="GBC">
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                      <!-- Cột 1 -->
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Department (*)</label>
+                        <select id="dropdown" disabled style="width: 100%;">
+                          <option>School of Information Technology and Communications</option>
+                        </select>
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Sub-department</label>
+                        <select id="dropdown" disabled style="width: 100%;">
+                          <option>Nothing selected</option>
+                        </select>
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Subject Code (*)</label>
+                        <input type="text" value="IT4409" dir="ltr" readonly="" disabled style="width: 100%;">
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Subject name</label>
+                        <input type="text" value="Web technologies and e-Services" dir="ltr" readonly="" disabled
+                          style="width: 100%; white-space: nowrap; overflow: hidden;">
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>English name</label>
+                        <input type="text" value="Web technologies and e-Services"
+                          class="form-control IBC form-control-readonly" dir="ltr" readonly="" disabled
+                          style="width: 100%;">
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Training System</label>
+                        <select id="dropdown" disabled style="width: 100%;">
+                          <option>4 items selected</option>
+                        </select>
+                        <div style="width: 100%;">
+                          <a>Master of Science&nbsp;[X]&nbsp;&nbsp;&nbsp;</a>
+                          <a>Bachelor of Engineering&nbsp;[X]&nbsp;&nbsp;&nbsp;</a>
+                          <a>Bachelor&nbsp;[X]&nbsp;&nbsp;&nbsp;</a>
+                          <a>Japan-Vietnam&nbsp;[X]&nbsp;&nbsp;&nbsp;</a>
+                        </div>
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Training Major</label>
+                        <select id="dropdown" disabled style="width: 100%;">
+                          <option>School of Information Technology and Communications</option>
+                        </select>
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Training Type (*)</label>
+                        <select id="dropdown" disabled style="width: 100%;">
+                          <option>Class</option>
+                        </select>
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Coordinator</label>
+                        <select id="dropdown" disabled style="width: 100%;">
+                          <option>Pham Huy Hoang</option>
+                        </select>
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Specialization Group</label>
+                        <select id="dropdown" disabled style="width: 100%;">
+                          <option>Pham Huy Hoang</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Related HP</label>
+                        <input type="text" placeholder="Enter HP code" disabled style="width: 100%;">
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Practice Score Factor</label>
+                        <input type="text" value="0" class="form-control IBC" dir="ltr" disabled=""
+                          style="width: 100%;">
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Credits</label>
+                        <input type="text" value="3" class="form-control IBC" dir="ltr" disabled=""
+                          style="width: 100%;">
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Number of lecture hours</label>
+                        <input type="text" value="2" class="form-control IBC" dir="ltr" disabled=""
+                          style="width: 100%;">
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Number of practical hours</label>
+                        <input type="text" value="2" class="form-control IBC" dir="ltr" disabled=""
+                          style="width: 100%;">
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Number of practical exercise hours</label>
+                        <input type="text" value="0" class="form-control IBC" dir="ltr" disabled=""
+                          style="width: 100%;">
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Number of self-study hours</label>
+                        <input type="text" value="6" class="form-control IBC" dir="ltr" disabled=""
+                          style="width: 100%;">
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Number of internship hours</label>
+                        <input type="text" value="0" class="form-control IBC" dir="ltr" disabled=""
+                          style="width: 100%;">
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Internship HD</label>
+                        <input type="text" value="0" class="form-control IBC" dir="ltr" disabled=""
+                          style="width: 100%;">
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Thesis work</label>
+                        <input type="text" value="0" class="form-control IBC" dir="ltr" disabled=""
+                          style="width: 100%;">
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Distribution</label>
+                        <input type="text" value="3(2-2-0-6)" class="form-control IBC" dir="ltr" disabled=""
+                          style="width: 100%;">
+                      </div>
+
+                      <div style="flex: 1; min-width: 300px;">
+                        <label>Final exam form</label>
+                        <select id="dropdown" disabled style="width: 100%;">
+                          <option>[Select Final Exam Form]</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div id="summaryVN">
+                      <div style="width: 100%;">&nbsp;
+                        <hr>
+                      </div>
+                      <div> <label><strong>Summary of the course (in Vietnamese)</strong>
+                          (*)</label>
+                      </div>
+                      <p><strong>Mục tiêu: </strong>Học phần cung cấp các kiến thức cần thiết để xây dựng và phát
+                        triển
+                        các ứng dụng, dịch vụ trực
+                        tuyến trên môi trường web. Sau khi học xong học phần này, sinh viên có khả năng:
+                      <ul>
+                        <li>Có thể sử dụng một ngôn ngữ lập trình như JSP, PHP để phát triển ứng dụng web cho các
+                          lĩnh
+                          vực khác nhau như: hệ quản trị nội dung (CMS), cổng thông tin (Portal), hay các ứng dụng
+                          điện
+                          tử (eCommerce, eLearning, eGoverment,…)</li>
+                        <li>Nắm vững được các công nghệ web, các platform, framework hiện đang thịnh hành.</li>
+                      </ul>
+                      Ngoài ra học phần cũng cung cấp cho sinh viên các kỹ năng làm việc nhóm, thuyết trình và thái
+                      độ
+                      cần thiết để làm việc và ứng dụng các kỹ thuật trong các dự án, công ty về phần mềm sau này.
+                      </p>
+                    </div>
+                    <div id="summaryEN">
+                      <div style="width: 100%;">&nbsp;
+                        <hr>
+                      </div>
+                      <div> <label><strong>Summary of the course (in English)</strong>
+                          (*)</label>
+                      </div>
+                      <p><strong>Objectives:</strong>
+                        The course provides students with the necessary knowledge to build and develop online
+                        applications and services on the web environment. After completing this couse, students are
+                        able
+                        to:
+                      <ul>
+                        <li>Use a programming language such as JSP, PHP to develop web applications for different
+                          areas
+                          such as content management system (CMS), portal, or online applications (eCommerce,
+                          eLearning,
+                          eGoverment, ...)</li>
+                        <li>Understand the popular web technologies, platforms, frameworks.</li>
+                      </ul>
+                      In addition, the course also provides students with skills of teamwork and presentation, and
+                      attitudes needed to work and apply the techniques in software projects and companies in the
+                      future.</p>
+                    </div>
+
+                    <div id="contentVN">
+                      <div style="width: 100%;">&nbsp;
+                        <hr>
+                      </div>
+                      <div> <label><strong>Course content (in
+                            Vietnamese)</strong>
+                          (*)</label> </div>
+                      <div>
+                        <p>Internet, web, kiến trúc ứng dụng web,&nbsp; HTML, CSS, Javascript, PHP, JSP, Ajax,
+                          DOM, XML,
+                          SOA, An toàn bảo mật web, v.v.</p>
+                      </div>
+                    </div>
+                    <div id="contentEN">
+                      <div style="width: 100%;">&nbsp;
+                        <hr>
+                      </div>
+                      <div> <label><strong>Summary of the course (in
+                            English)</strong>
+                          (*)</label> </div>
+                      <div>
+                        <p>Internet, web, architecture of web
+                          application,&nbsp; HTML, CSS, Javascript, PHP, JSP, Ajax, DOM, XML, SOA,&nbsp;website
+                          security</a>,
+                          etc.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="reference">
+                    <div style="width: 100%;">&nbsp;
+                      <hr>
+                    </div>
+                    <div> <label><strong>Reference Books</strong></label> </div>
+                    <div style="display: flex; justify-content: space-between;">
+                      <div style="flex: 2; margin-right: 30px;">
+                        <p>Web Technologies: HTML, Javascript, PHP, Java, Jsp, XML and Ajax, Black Book</p>
+                      </div>
+                      <a href="https://www.amazon.com/Web-Technologies-HTML-Javascript-Black/dp/8177229974"
+                        target="_blank" style="flex: 1;margin-top: 20px;">
+                        <div class="FRB" style="width: 100%;">
+                          <img class="DRB" src="https://m.media-amazon.com/images/I/71t58FV+qFL._SY466_.jpg"
+                            style="width: 100%;">
+                          <div class="ERB" style="width: 100%;color: blue" title="">Web Technologies: HTML,
+                            Javascript, PHP, Java, Jsp, XML and Ajax, Black Book</div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Section 3: Web Technologies -->
+    <div id="web-tech" class="w3-container w3-padding-64 hidden">
+      <div class="container">
+        <div class="header">Web Technologies</div>
+        <p>Below are the common technologies used in building Web applications:</p>
+        <div id="frontend">
+          <h3>1. Frontend (Client-side)</h3>
+          <ul>
+            <li><strong>HTML, CSS, JavaScript</strong>: Common technologies used to build Web applications.</li>
+            <li><strong>ReactJS</strong>: JavaScript library to build dynamic user interfaces.</li>
+            <li><strong>Angular</strong>: Powerful JavaScript framework for large-scale Web applications.</li>
+            <li><strong>Vue.js</strong>: Flexible framework for efficient user interface development.</li>
+            <li><strong>CSS Preprocessors (SASS, LESS)</strong>: Help improve CSS code with features like
+              variables and functions.
+            </li>
+            <li><strong>Responsive Design</strong>: Interface design suitable for all screen sizes (using Bootstrap,
+              Tailwind CSS).
+            </li>
+          </ul>
+        </div>
+
+        <div id="backend">
+          <h3>2. Backend (Server and Data Processing)</h3>
+          <ul>
+            <li><strong>Node.js</strong>: JavaScript runtime environment for Web applications.</li>
+            <li><strong>Express.js</strong>: Framework for building APIs and handling HTTP requests quickly.</li>
+            <li><strong>Django (Python)</strong>: Python framework suitable for high-security Web applications.</li>
+            <li><strong>Ruby on Rails</strong>: Framework for rapid and easy-to-maintain Web application development.
+            </li>
+            <li><strong>Java Spring Boot</strong>: Powerful framework for Java Web applications with high scalability.
+            </li>
+          </ul>
+        </div>
+
+        <div id="database">
+          <h3>3. Database</h3>
+          <ul>
+            <li><strong>MySQL</strong>: Popular relational database.</li>
+            <li><strong>PostgreSQL</strong>: Powerful database supporting complex queries.</li>
+            <li><strong>MongoDB</strong>: Flexible NoSQL database for unstructured data.</li>
+            <li><strong>Cassandra</strong>: Distributed NoSQL database suitable for big data.</li>
+          </ul>
+        </div>
+
+        <div id="api">
+          <h3>4. API and Service Integration</h3>
+          <ul>
+            <li><strong>RESTful APIs</strong>: Popular method for communication between systems via HTTP.</li>
+            <li><strong>GraphQL</strong>: Powerful API technology to get data on demand.</li>
+            <li><strong>WebSockets</strong>: Real-time applications solution.</li>
+          </ul>
+        </div>
+
+        <div id="devops">
+          <h3>5. DevOps and Deployment</h3>
+          <ul>
+            <li><strong>Docker</strong>: Containerization solution for packaging applications and environments.</li>
+            <li><strong>CI/CD</strong>: Automated testing and deployment process (Jenkins, GitLab CI, GitHub
+              Actions).
+            </li>
+            <li><strong>AWS, Azure, Google Cloud</strong>: Flexible cloud services for developing and deploying web
+              applications.</li>
+          </ul>
+        </div>
+
+        <div id="security"></div>
+        <h3>6. Security</h3>
+        <ul>
+          <li><strong>OAuth2 & JWT</strong>: Authentication and Authorization mechanism for users.</li>
+          <li><strong>HTTPS</strong>: Secure communication through SSL/TLS encryption.</li>
+          <li><strong>Helmet.js</strong>: Node.js enhance HTTP header security.</li>
+        </ul>
+
+        <div id="testing">
+          <h3>7. Testing và Debugging</h3>
+          <ul>
+            <li><strong>Jest</strong>: JavaScript testing tool, often used with React and Node.js.</li>
+            <li><strong>Mocha & Chai</strong>: Testing framework for Node.js.</li>
+            <li><strong>Cypress</strong>: Powerful integrated testing tool for Web applications.</li>
+            <li><strong>Postman</strong>: API testing tool and working with RESTful API.</li>
+          </ul>
+        </div>
+
+        <div id="optimization">
+          <h3>8. Performance Optimization</h3>
+          <ul>
+            <li><strong>Lazy Loading</strong>: Loading resources on demand to improve page load speed.</li>
+            <li><strong>CDN (Content Delivery Network)</strong>: Content Delivery Network to reduce latency and improve
+              speed.
+            </li>
+            <li><strong>Caching</strong>: Using Redis or Memcached to store temporary data and reduce load on
+              server.
+            </li>
+          </ul>
+        </div>
+
+        <div id="authentication">
+          <h3>9. User Authentication & Authorization</h3>
+          <ul>
+            <li><strong>Firebase Authentication</strong>: Login Authentication Service.</li>
+            <li><strong>Auth0</strong>: Authentication and Authorization Service.</li>
+          </ul>
+        </div>
+        <a href="https://developer.mozilla.org/en-US/docs/Web" target="_blank">
+          <img width="100%"
+            src="https://www.shutterstock.com/shutterstock/photos/1854050815/display_1500/stock-vector-abstract-technology-horizontal-motion-style-concept-particle-connection-background-design-with-red-1854050815.jpg"
+            alt="">
+          <p style="color: blue;">
+            Web Technologies</p>
+        </a>
+
+      </div>
+    </div>
+    <!-- Section 4: Student Information -->
+    <div id="student-info" class="w3-container w3-padding-64 hidden">
+      <div class="container">
+        <div class="header">Student Information</div>
+
+        <div class="student-info" style="height: 50%">
+          <div class="left">
+            <img src="./assets/ava.jpg" alt="Student Photo" class="profile-photo">
+          </div>
+          <div class="right">
+            <div class="details"><span>Full Name:</span> Ha Duc Duong</div>
+            <div class="details"><span>Year:</span> 2023</div>
+            <div class="details"><span>Education level:</span> KSCLC-TN-TT-VNVP-ICT</div>
+            <div class="details"><span>Program:</span> Global ICT 2023</div>
+            <div class="details"><span>Student ID:</span> [STUDENTID]</div>
+            <div class="details"><span>Gender:</span> Male</div>
+            <div class="details"><span>Class:</span> ICT-01 K68</div>
+            <div class="details"><span>Course:</span> 68</div>
+            <div class="details"><span>Email:</span> [EMAIL_ADDRESS]</div>
+          </div>
+        </div>
+
+        <div class="academic-info" id="academic-info">
+          <div class="section-header">Academic Information</div>
+          <table class="table-info">
+            <tr>
+              <th>Summary of semester</th>
+              <td>20251</td>
+              <th>Number of accumulated credits</th>
+              <td>83</td>
+            </tr>
+            <tr>
+              <th>Cumulative average</th>
+              <td>3.00</td>
+              <th>Student level</th>
+              <td>3</td>
+            </tr>
+            <tr>
+              <th>Number of registered credits</th>
+              <td>0</td>
+              <th>Alert level</th>
+              <td>M0</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="skills-info" id="skills-info">
+          <div class="section-header">Skills</div>
+          <div class="skills">
+            <table class="table-info">
+              <tr>
+                <th>Language</th>
+                <td>HTML, CSS, JavaScript, PHP, Java</td>
+              </tr>
+              <tr>
+                <th>Frameworks</th>
+                <td>ReactJS, NodeJS, Express</td>
+              </tr>
+              <tr>
+                <th>Tools</th>
+                <td>Git, Visual Studio Code</td>
+              </tr>
+              <tr>
+                <th>Database</th>
+                <td>PostgreSQL, Supabase, MongoDB</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="projects-info" id="projects-info">
+          <div class="section-header">Projects</div>
+          <div class="project">
+            <table class="table-info">
+              <tr>
+                <th>Project of booking a medical examination appointment for patients (Doctor Appointment)</th>
+                <td>5 students <br>
+                  Task: create a website for doctor appointment <br>
+                  Technology : React, CSS, MongoDB <br>
+                  Goal: Creating a user interface for the system</td>
+              </tr>
+              <tr>
+                <th>Digital E-Commerce System (AIMS)</th>
+                <td>5 students <br>
+                  Task: Developing frontend, backend, database phân theo từng usecases <br>
+                  Technology : JavaFX, Supabase, Java <br>
+                  Goal: Creating a complete e-commerce system</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="hobbies-info" id="hobbies-info">
+          <div class="section-header">Hobbies</div>
+          <ul>
+            <li>Listening to music</li>
+            <li>Watching movies</li>
+            <li>Playing game Tetris</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="admin-page" class="w3-container w3-padding-64 hidden">
+      <div class="container">
+        <div class="header">Admin Page</div>
+        <button class="w3-button w3-green w3-margin-bottom" onClick="addTopMenu()">+ Add New Menu</button>
+        <table class="w3-table-all w3-hoverable">
+          <thead>
+            <tr class="w3-light-grey">
+              <th>ID</th>
+              <th>Name</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="admin-top-menu-tbody">
+            <!-- Render from localStorage -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Page 2: Admin Menu Left -->
+    <div id="admin-menu-left" class="w3-container w3-padding-64 hidden">
+      <div class="container">
+        <div class="header">Manage Left Menu</div>
+        <div class="w3-margin-bottom">
+          <button class="w3-button w3-green" onClick="addLeftMenu()">+ Add Left Menu</button>
+          <button id="btn-reset-student" class="w3-button w3-red w3-right hidden" onclick="resetStudentInfo()">Reset
+            Student Info</button>
+        </div>
+        <table class="w3-table-all w3-hoverable">
+          <thead>
+            <tr class="w3-light-grey">
+              <th>ID</th>
+              <th>Name</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="admin-left-menu-tbody">
+            <!-- Render from localStorage -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Page 3: Admin Contents Layout -->
+    <div id="admin-contents-layout" class="w3-container w3-padding-64 hidden">
+      <div class="container">
+        <div class="header">
+          Manage Layout
+          <a href="https://www.w3schools.com/css/css_rwd_grid.asp" target="_blank"
+            class="w3-text-blue w3-large w3-margin-left" title="Hướng dẫn sử dụng Grid Layout"><i
+              class="fas fa-info-circle"></i></a>
+        </div>
+        <button class="w3-button w3-green w3-margin-bottom" onClick="addLayoutContent()">+Add Layout Content</button>
+        <table class="w3-table-all w3-hoverable w3-margin-bottom">
+          <thead>
+            <tr class="w3-light-grey">
+              <th>ID</th>
+              <th>Name</th>
+              <th>Layout (Column Span)</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="admin-layout-tbody">
+            <!-- Render bằng JS -->
+          </tbody>
+        </table>
+        <div class="header" style="margin-top: 30px;">Preview Layout</div>
+        <div id="layout-preview-area" class="w3-margin-bottom"
+          style="background: #f9f9f9; padding: 10px; border-radius: 5px;"></div>
+      </div>
+    </div>
+    <!-- Page 4: Admin Contents (HTML Content) -->
+    <div id="admin-contents" class="w3-container w3-padding-64 hidden">
+      <div class="container">
+        <div class="header">Content (HTML Content)</div>
+
+        <!-- QuillJS Editor -->
+        <div id="editor-container" style="height: 300px; background: white;"></div>
+        <button class="w3-button w3-blue w3-margin-top" onclick="saveContent()">Save Content</button>
+        <button class="w3-button w3-grey w3-margin-top" onclick="viewAdminLayout(currentLeftMenuId)">Back to
+          Layout</button>
+        <div class="header" style="margin-top: 30px;">Preview Content (HTML Content will render here)</div>
+        <div id="content-preview" class="grid-container w3-padding" style="border: 1px solid #ccc; min-height: 200px;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="myFooter">
+    <div class="w3-theme-l1 w3-padding-32">
+      <p>&copy; 2026 Duong's website. All rights reserved.</p>
+      <p>Contact: <a href="mailto:info@mywebsite.com">info@mywebsite.com</a></p>
+      <p><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a> |
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a> | <a
+          href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      </p>
+
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </div>
+  </footer>
+
+  <!-- END MAIN -->
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script src="./js/data.js"></script>
+  <script src="./js/scripts.js"></script>
+
+  <div id="highlighter--hover-tools" style="display: none;">
+    <div id="highlighter--hover-tools--container">
+      <div class="highlighter--icon highlighter--icon-copy" title="Copy"></div>
+      <div class="highlighter--icon highlighter--icon-change-color" title="Change Color"></div>
+      <div class="highlighter--icon highlighter--icon-delete" title="Delete"></div>
+    </div>
+  </div>
+</body>
+
+</html>
