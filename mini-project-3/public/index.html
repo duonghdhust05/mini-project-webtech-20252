@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Services Integration</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>Mini Project 3</h1>
+            <div id="auth-section">
+                <button id="login-btn" class="btn google-btn">Login Google</button>
+                <div id="user-info" class="hidden">
+                    <img id="user-avatar" src="" alt="Avatar">
+                    <span id="user-name"></span>
+                    <button id="logout-btn" class="btn danger-btn">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN DASHBOARD -->
+        <main id="dashboard" class="hidden">
+            <div class="grid">
+                <!-- GMAIL CARD -->
+                <div class="card glass">
+                    <h2>Gmail API</h2>
+
+                    <div class="tabs">
+                        <button class="tab-btn active" onclick="switchTab('inbox')">Inbox</button>
+                        <button class="tab-btn" onclick="switchTab('compose')">Compose</button>
+                    </div>
+
+                    <!-- Inbox Tab -->
+                    <div id="tab-inbox" class="tab-content active">
+                        <button id="check-mail-btn" class="btn">Check Mail</button>
+                        <ul id="email-list"></ul>
+                    </div>
+
+                    <!-- Compose Tab -->
+                    <div id="tab-compose" class="tab-content hidden">
+                        <form id="email-form">
+                            <input type="email" id="email-to" placeholder="Recipient" required>
+                            <input type="text" id="email-subject" placeholder="Subject" required>
+                            <textarea id="email-body" rows="4" placeholder="Content" required></textarea>
+                            <button type="submit" class="btn primary-btn">Send Email</button>
+                        </form>
+                        <div id="email-status"></div>
+                    </div>
+                </div>
+
+                <!-- GEMINI CHATBOT CARD -->
+                <div class="card glass">
+                    <h2>Gemini Chatbot</h2>
+                    <div class="chat-box" id="chat-box">
+                        <div class="message ai">Hello! How can I help you?</div>
+                    </div>
+                    <form id="chat-form" class="chat-input-area">
+                        <input type="text" id="chat-input" placeholder="Ask a question..." required>
+                        <button type="submit" class="btn primary-btn">Send</button>
+                    </form>
+                </div>
+
+                <!-- VietQR PAYMENT CARD -->
+                <div class="card glass">
+                    <h2>VietQR Payment</h2>
+                    <form id="payment-form">
+                        <div class="input-group">
+                            <label for="amount">Amount (VNĐ):</label>
+                            <input type="number" id="amount" value="50000" min="2000" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="order-info">Order Information:</label>
+                            <input type="text" id="order-info" value="Payment for Mini Project" required>
+                        </div>
+                        <button type="submit" class="btn success-btn">Create QR Code Payment</button>
+                    </form>
+
+                    <div id="qr-result" class="hidden" style="margin-top: 1.5rem; text-align: center;">
+                        <img id="qr-image" src="" alt="Mã QR thanh toán" style="max-width: 80%; border-radius: 8px;">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
